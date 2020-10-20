@@ -63,7 +63,7 @@ func (d *DockerAdapter) RemoveContainer(ctx context.Context, config *ContainerCo
 }
 
 func (d *DockerAdapter) RunImage(ctx context.Context, app applications.Application, config *ContainerConfig) error {
-	created, err := d.client.ContainerCreate(ctx, config.config, config.hostConfig, nil, app.ContainerName())
+	created, err := d.client.ContainerCreate(ctx, config.config, config.hostConfig, config.networkingConfig, app.ContainerName())
 	if err != nil {
 		return err
 	}

@@ -3,7 +3,7 @@ package applications
 type LHTimer struct{}
 
 func (l LHTimer) ContainerName() string {
-	return "docker-compose_timer_1"
+	return "test_timer"
 }
 
 func (l LHTimer) ImageReference() string {
