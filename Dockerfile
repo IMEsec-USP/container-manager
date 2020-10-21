@@ -1,10 +1,13 @@
-from golang:1.15-alpine
+from golang:1-alpine
 
 WORKDIR /go/src/app
 
-COPY . .
+COPY go.mod .
+COPY go.sum .
 
-RUN go get -d -v ./...
+RUN go mod download
+
+COPY . .
 RUN go install -v ./...
 
 CMD ["container-manager"]
