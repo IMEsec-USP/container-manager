@@ -45,13 +45,6 @@ func RestartContainer(
 	return http.StatusOK, "restarted container"
 }
 
-// func logOutput(logger zerolog.Logger, output io.Reader) {
-// 	_, err := io.Copy(logger, output)
-// 	if err != nil {
-// 		logger.Err(err)
-// 	}
-// }
-
 func (h *HTTPHandler) RegisterRestart() {
 	h.Post("/restart/:appID", middleware.WithFiveMinuteTimeout, middleware.ParseAppID, RestartContainer)
 }
