@@ -15,7 +15,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	logger := zerolog.New(os.Stdout).Output(zerolog.ConsoleWriter{Out: os.Stderr}).With().Timestamp().Logger()
+	logger := zerolog.New(os.Stdout).Output(zerolog.ConsoleWriter{Out: os.Stdout}).With().Timestamp().Logger()
 	logger.Info().Msg("started logger")
 
 	h := handlers.NewHTTPHandler()
