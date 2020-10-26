@@ -5,12 +5,11 @@ import (
 	"io"
 	"time"
 
+	"github.com/IMEsec-USP/container-manager/applications"
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/api/types/network"
 	"github.com/docker/docker/client"
-
-	"github.com/IMEsec-USP/container-manager/applications"
 )
 
 // DockerAdapter is the adapter that communicates with dockerd.

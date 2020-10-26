@@ -8,6 +8,9 @@ services:
         depends_on:
             - timer
             - test
+        ports:
+            - 3000:3000
+
     timer:
         container_name: test_timer
         image: lightninghacks/timer
