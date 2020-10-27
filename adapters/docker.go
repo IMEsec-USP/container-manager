@@ -18,6 +18,7 @@ type DockerAdapter struct {
 }
 
 type ContainerConfig struct {
+	containerName    string
 	id               string
 	config           *container.Config
 	hostConfig       *container.HostConfig
