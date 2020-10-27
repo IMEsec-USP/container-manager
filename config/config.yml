@@ -1,0 +1,11 @@
+applications:
+  ada:
+    image-reference: docker.io/imesec/ada
+    matches-regexes:
+      - ".*-ada_[0-9]+"
+
+  timer:
+    image-reference: docker.io/lightninghacks/timer
+    matches-regexes:
+      - "test_timer"
+      - ".*-lh-timer_[0-9]+"
