@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 
 services:
     container-manager:
@@ -8,6 +8,9 @@ services:
         depends_on:
             - timer
             - test
+        configs:
+            - source: container-manager-test-config
+              target: /configs
         ports:
             - 3000:3000
 
@@ -25,3 +28,7 @@ services:
         container_name: test_curl
         image: curlimages/curl
         command: sleep 10000000
+
+configs:
+    container-manager-test-config:
+        file: ../config/config.yml

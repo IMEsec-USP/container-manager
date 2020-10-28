@@ -20,7 +20,7 @@ func RestartContainer(
 
 	startClock := time.Now()
 
-	containerConfig, err := adapter.GetContainerConfig(tctx, app)
+	containerConfig, err := adapter.GetContainerConfig(tctx, app, logger)
 	if err != nil {
 		// TODO the container may already be dead. In that case, we could have
 		// the initial settings of the containers so that we can restart them somehow.
