@@ -9,3 +9,5 @@ applications:
     matches-regexes:
       - "test_timer"
       - ".*-lh-timer_[0-9]+"
+host: 0.0.0.0
+port: 3000

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/IMEsec-USP/container-manager/adapters"
@@ -37,8 +38,7 @@ func main() {
 		h.RegisterRestart()
 		h.RegisterPull()
 	}
-	h.Run()
-	// h.RunOnAddr(viper.GetString("host"))
+	h.RunOnAddr(fmt.Sprintf("%v:%v", viper.GetString("host"), viper.GetInt("port")))
 }
 
 func readConfigurations(logger zerolog.Logger) {
@@ -46,7 +46,8 @@ func readConfigurations(logger zerolog.Logger) {
 	viper.AddConfigPath("./config")
 	viper.AddConfigPath("/configs")
 	{
-		viper.SetDefault("host", "127.0.0.1:3000")
+		viper.SetDefault("host", "0.0.0.0")
+		viper.SetDefault("port", 3000)
 	}
 	err := viper.ReadInConfig()
 	if err != nil {
